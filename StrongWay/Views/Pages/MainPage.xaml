@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StrongWay.Views.Pages.MainPage" Background="#232323">
+
+    <!-- Main Grid -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height=".8*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Padding="20, 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" FontSize="26" TextColor="#896cfe" FontAttributes="Bold" Text="Hi, User"/>
+            <Label Grid.Row="1" Grid.ColumnSpan="2" FontSize="12" TextColor="White" FontAttributes="Bold" Text="It's Time To Challenge Your Limits."/>
+
+            <HorizontalStackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Spacing="14">
+                <Image Source="search.svg" HeightRequest="26"/>
+                <Image Source="notifications_bell.svg" HeightRequest="26"/>
+                <Image Source="user.svg" HeightRequest="26"/>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!-- Footer -->
+        <Grid Grid.Row="2" Background="#b3a0ff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="home.svg" Grid.Column="0" HeightRequest="36"/>
+            <Image Source="video_file.svg" Grid.Column="1" HeightRequest="36"/>
+            <Image Source="star.svg" Grid.Column="2" HeightRequest="36"/>
+            <Image Source="customer_support.svg" Grid.Column="3" HeightRequest="36"/>
+        </Grid>
+
+        <!-- Body -->
+        <ScrollView Grid.Row="1" Orientation="Vertical">
+            <VerticalStackLayout>
+                <!-- In-body display buttons -->
+                <Grid Grid.Row="1" Padding="0,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.Resources>
+                        <Style TargetType="VerticalStackLayout">
+                            <Setter Property="VerticalOptions" Value="Center" />
+                            <Setter Property="Spacing" Value="10"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="InputTransparent" Value="False"/>
+                        </Style>
+
+                        <Style TargetType="Label">
+                            <Setter Property="HorizontalOptions" Value="Center"/>
+                            <Setter Property="TextColor" Value="#b3a0ff"/>
+                        </Style>
+
+                        <Style TargetType="Image">
+                            <Setter Property="HeightRequest" Value="36"/>
+                            <Setter Property="WidthRequest" Value="36"/>
+                        </Style>
+
+                        <Style TargetType="Rectangle">
+                            <Setter Property="HeightRequest" Value="60"/>
+                            <Setter Property="Fill" Value="#b3a0ff" />
+                        </Style>
+                    </Grid.Resources>
+
+                    <!-- Spacing bars -->
+                    <Rectangle Grid.Column="1"/>
+                    <Rectangle Grid.Column="3"/>
+                    <Rectangle Grid.Column="5"/>
+                    
+                    <!-- Yellow for focus color: #dfee61 -->
+                    <VerticalStackLayout Grid.Column="0" ClassId="Workout">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </VerticalStackLayout.GestureRecognizers>
+
+                        <Image x:Name="WorkoutImage" Source="barbell_focused.svg"/>
+                        <Label x:Name="WorkoutLabel" TextColor="#e2f163" Text="Workout"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="2" ClassId="Progress">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </VerticalStackLayout.GestureRecognizers>
+
+                        <Image x:Name="ProgressImage" Source="clipboard.svg"/>
+                        <Label x:Name="ProgressLabel" Text="Progress&#10;Tracking"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="4" ClassId="Nutrition">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </VerticalStackLayout.GestureRecognizers>
+
+                        <Image x:Name="NutritionImage" Source="nutrition.svg"/>
+                        <Label x:Name="NutritionLabel" Text="Nutrition"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="6" ClassId="Community">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </VerticalStackLayout.GestureRecognizers>
+
+                        <Image x:Name="CommunityImage" Source="community.svg"/>
+                        <Label x:Name="CommunityLabel" Text="Community"/>
+                    </VerticalStackLayout>
+                </Grid>
+            
+                <!-- Body announcements display -->
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

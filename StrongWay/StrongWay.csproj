@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net9.0-android</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
@@ -20,10 +20,10 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>StrongWay</ApplicationTitle>
+		<ApplicationTitle>Strong Way</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.strongway</ApplicationId>
+		<ApplicationId>com.salahorii.strongway</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -46,7 +46,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -56,18 +55,42 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+	  <None Remove="Resources\Images\HomePage\svg\focused\barbell_focused.svg" />
+	  <None Remove="Resources\Images\HomePage\svg\focused\clipboard_focused.svg" />
+	  <None Remove="Resources\Images\HomePage\svg\focused\community_focused.svg" />
+	  <None Remove="Resources\Images\HomePage\svg\focused\nutrition_focused.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.50" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="Dictionaries\" />
+	  <Folder Include="Models\" />
 	  <Folder Include="Themes\" />
 	  <Folder Include="Services\" />
 	  <Folder Include="ViewModels\" />
-	  <Folder Include="Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\HomePage\svg\barbell.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\clipboard.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\community.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\focused\barbell_focused.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\focused\clipboard_focused.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\focused\community_focused.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\focused\nutrition_focused.svg" />
+	  <MauiImage Include="Resources\Images\HomePage\svg\nutrition.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\customer_support.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\home.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\notifications_bell.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\search.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\star.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\user.svg" />
+	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\video_file.svg" />
 	</ItemGroup>
 
 </Project>
