@@ -6,10 +6,11 @@
     xmlns:local="clr-namespace:StrongWay"
     xmlns:pages="clr-namespace:StrongWay.Views.Pages"
     Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
     Title="StrongWay">
 
     <ShellContent
-        ContentTemplate="{DataTemplate pages:MainPage}"
+        ContentTemplate="{DataTemplate pages:LoginPage}"
         Route="MainPage" />
 
 </Shell>

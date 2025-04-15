@@ -59,6 +59,8 @@
 	  <None Remove="Resources\Images\HomePage\svg\focused\clipboard_focused.svg" />
 	  <None Remove="Resources\Images\HomePage\svg\focused\community_focused.svg" />
 	  <None Remove="Resources\Images\HomePage\svg\focused\nutrition_focused.svg" />
+	  <None Remove="Resources\Images\SocialMediaIcons\svg\facebook.svg" />
+	  <None Remove="Resources\Images\SocialMediaIcons\svg\google.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -91,6 +93,29 @@
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\star.svg" />
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\user.svg" />
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\video_file.svg" />
+	  <MauiImage Include="Resources\Images\SocialMediaIcons\svg\facebook.svg" />
+	  <MauiImage Include="Resources\Images\SocialMediaIcons\svg\google.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Controls\RoundEntry.xaml.cs">
+	    <DependentUpon>RoundEntry.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Controls\RoundButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\RoundEntry.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
