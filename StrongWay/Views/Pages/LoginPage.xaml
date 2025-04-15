@@ -80,6 +80,5 @@
                        Text="Sign up"/>
             </HorizontalStackLayout>
         </Grid>
-
     </Grid>
 </ContentPage>

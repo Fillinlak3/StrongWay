@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StrongWay.Views.Pages.RegisterPage"
-             Title="RegisterPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:controls="clr-namespace:StrongWay.Views.Controls"
+             x:Class="StrongWay.Views.Pages.RegisterPage" Title="RegisterPage"
+             Background="#232323">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Page Title -->
+        <Label Grid.Row="0" FontAttributes="Bold" FontSize="30" TextColor="#e2f163"
+           Padding="10" HorizontalOptions="Center" Text="Create Account"/>
+
+        <!-- Page Message -->
+        <Label Grid.Row="1" FontAttributes="Bold" FontSize="26" TextColor="White"
+               HorizontalOptions="Center" Text="Let's Start!"/>
+
+        <!-- Input Form -->
+        <Grid Grid.Row="2" BackgroundColor="#b3a0ff" RowSpacing="20" Padding="20,10,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <VerticalStackLayout Grid.Row="0" Spacing="10">
+                <Label Grid.Row="0" TextColor="Black" FontSize="16" Text="Username"/>
+                <controls:RoundEntry Grid.Row="0" HeightRequest="50"
+                                     BorderBackground="White" Placeholder="your_username"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Spacing="10">
+                <Label Grid.Row="0" TextColor="Black" FontSize="16" Text="Email"/>
+                <controls:RoundEntry Grid.Row="0" HeightRequest="50"
+                                     BorderBackground="White" Placeholder="example@example.com"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="2" Spacing="10">
+                <Label Grid.Row="0" TextColor="Black" FontSize="16" Text="Password"/>
+                <controls:RoundEntry Grid.Row="0" HeightRequest="50"
+                                     IsPassword="True" BorderBackground="White" Placeholder="********"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" Spacing="10">
+                <Label Grid.Row="0" TextColor="Black" FontSize="16" Text="Confirm Password"/>
+                <controls:RoundEntry Grid.Row="0" HeightRequest="50"
+                                     IsPassword="True" BorderBackground="White" Placeholder="********"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Buttons & Other methods -->
+        <Grid Grid.Row="3" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <VerticalStackLayout Grid.Row="0">
+                <Label TextColor="White" HorizontalOptions="Center" FontSize="16"
+                       Text="By continuing, you agree to"/>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label TextColor="Yellow" FontSize="16"
+                           Text="Terms of Use"/>
+                    <Label TextColor="White" FontSize="16"
+                           Text="and"/>
+                    <Label TextColor="Yellow" FontSize="16"
+                           Text="Privacy Policy"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <controls:RoundButton Grid.Row="1" WidthRequest="230" HeightRequest="60"
+                              Text="Sign Up"/>
+
+            <Label Grid.Row="2" HorizontalOptions="Center" TextColor="White" FontSize="16" Margin="0,30,0,0"
+               Text="or sign up with"/>
+
+            <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center" Margin="0,-20,0,0" Spacing="25">
+                <Image Source="google.svg" HeightRequest="25"/>
+                <Image Source="facebook.svg" HeightRequest="30"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="4" HorizontalOptions="Center" Spacing="10">
+                <Label TextColor="White" FontSize="16"
+                   Text="Already have an account?"/>
+                <Label TextColor="Yellow" FontSize="16"
+                   Text="Log In"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </Grid>
 </ContentPage>
