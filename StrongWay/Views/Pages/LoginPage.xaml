@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:StrongWay.Views.Controls"
+             xmlns:viewmodels="clr-namespace:StrongWay.ViewModels"
              x:Class="StrongWay.Views.Pages.LoginPage" Title="LoginPage"
+             x:DataType="viewmodels:LoginPageViewModel"
              Background="#232323">
 
     <Grid>
@@ -62,6 +64,16 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderColor" Value="Transparent"/>
+                    <Setter Property="TextColor" Value="Yellow"/>
+                    <Setter Property="BorderWidth" Value="0"/>
+                    <Setter Property="FontSize" Value="16"/>
+                </Style>
+            </Grid.Resources>
+
             <controls:RoundButton Grid.Row="0" WidthRequest="230" HeightRequest="60"
                                   Text="Log In"/>
 
@@ -73,11 +85,10 @@
                 <Image Source="facebook.svg" HeightRequest="30"/>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center" Spacing="10">
+            <HorizontalStackLayout Grid.Row="3" VerticalOptions="Start" HorizontalOptions="Center" Spacing="10">
                 <Label TextColor="White" FontSize="16"
                        Text="Don't have an account?"/>
-                <Label TextColor="Yellow" FontSize="16"
-                       Text="Sign up"/>
+                <Button Text="Sign up" Margin="0,-9,0,0" Command="{Binding NavigateToRegisterPageCommand}"/>
             </HorizontalStackLayout>
         </Grid>
     </Grid>

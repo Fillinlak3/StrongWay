@@ -73,8 +73,6 @@
 	  <Folder Include="Dictionaries\" />
 	  <Folder Include="Models\" />
 	  <Folder Include="Themes\" />
-	  <Folder Include="Services\" />
-	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -108,6 +106,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Controls\RoundEntry.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\BlankStartupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\LoginPage.xaml">

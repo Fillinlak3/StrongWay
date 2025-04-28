@@ -9,8 +9,5 @@
     Shell.NavBarIsVisible="False"
     Title="StrongWay">
 
-    <ShellContent
-        ContentTemplate="{DataTemplate pages:LoginPage}"
-        Route="MainPage" />
-
+    <ShellContent ContentTemplate="{DataTemplate pages:BlankStartupPage}" Route="BlankPage"/>
 </Shell>
