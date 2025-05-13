@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using StrongWay.Services;
+using System.Diagnostics;
 
 namespace StrongWay.Views.Pages
 {
@@ -6,10 +7,28 @@ namespace StrongWay.Views.Pages
     {
         public static readonly string UnfocusedColor = "#b3a0ff";
         public static readonly string FocusedColor = "#e2f163";
+        private VideoPlayer _videoPlayer;
 
-        public MainPage()
+        public MainPage(VideoPlayer videoPlayer)
         {
             InitializeComponent();
+
+            _videoPlayer = videoPlayer;
+        }
+
+        private async void ContentPage_Initialize(object sender, EventArgs e)
+        {
+            /*
+                Checks if there are videos loaded already.
+                Skips initializing over and over again.
+             */
+            if(_videoPlayer.IsInitialized == false)
+                await _videoPlayer.InitAsync();
+
+            foreach (var item in _videoPlayer.Videos)
+                Debug.WriteLine(item.Name);
+
+            BodyContent.Content = new Panels.WorkoutPanel(_videoPlayer);
         }
 
         void UnfocusAllBodyButtons()

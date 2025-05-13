@@ -1,0 +1,23 @@
+[
+	{
+		"source": "dumbell_curl.mp4",
+		"name": "Dumbell Curl",
+		"thumbnail": "thumbnail_dumbell_curl.png",
+		"exerciseDifficulty": "Beginner",
+		"muscleGroup": "Arms"
+	},
+	{
+		"source": "onearm_seated_dumbellwristcurl.mp4",
+		"name": "One-Arm Seated Dumbell Wrist Curl",
+		"thumbnail": "Thumbnail_onearm_seated_dumbellwristcurl.png",
+		"exerciseDifficulty": "Beginner",
+		"muscleGroup": "Arms"
+	},
+	{
+		"source": "single_benchdip.mp4",
+		"name": "Single Bench Dip",
+		"thumbnail": "Thumbnail_single_benchdip.png",
+		"exerciseDifficulty": "Beginner",
+		"muscleGroup": "Arms"
+	}
+]

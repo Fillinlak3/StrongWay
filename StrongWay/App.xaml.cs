@@ -38,7 +38,7 @@ namespace StrongWay
                 to be fully loaded in AppShell, so it needs to navigate OnStart when everything
                 is prepared.
              */
-            await Shell.Current.GoToAsync(nameof(LoginPage));
+            await Shell.Current.GoToAsync(nameof(MainPage));
         }
     }
 }

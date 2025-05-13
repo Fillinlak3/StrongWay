@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="StrongWay.Views.Pages.MainPage" Title="MainPage"
-             Background="#232323">
+             Background="#232323" Appearing="ContentPage_Initialize">
 
     <!-- Main Grid -->
     <Grid>
@@ -33,7 +34,7 @@
             </HorizontalStackLayout>
         </Grid>
 
-        <!-- Footer -->
+        <!-- Footer --> 
         <Grid Grid.Row="2" Background="#b3a0ff">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -51,7 +52,7 @@
         <ScrollView Grid.Row="1" Orientation="Vertical">
             <VerticalStackLayout>
                 <!-- In-body display buttons -->
-                <Grid Grid.Row="1" Padding="0,0,10,0">
+                <Grid Grid.Row="1" Padding="0,0,10,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="3"/>
@@ -130,7 +131,7 @@
                 </Grid>
             
                 <!-- Body announcements display -->
-                
+                <ContentView x:Name="BodyContent"/>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
