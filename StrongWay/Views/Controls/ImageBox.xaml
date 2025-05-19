@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:self="clr-namespace:StrongWay.Views.Controls"
+             x:Class="StrongWay.Views.Controls.ImageBox"
+             x:DataType="self:ImageBox">
+
+    <Border Background="#232323">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Video Thumbnail -->
+            <Image Grid.Row="0" Source="{Binding VideoThumbnailSource, Source={RelativeSource AncestorType={x:Type self:ImageBox}}}" Aspect="Fill"/>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.Resources>
+                    <Style x:Key="ExerciseNameStyle" TargetType="Label">
+                        <Setter Property="TextColor" Value="#e2f163" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Padding" Value="10,5,20,0" />
+                    </Style>
+                </Grid.Resources>
+
+                <!-- Exercise Title -->
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource ExerciseNameStyle}"
+                       Text="{Binding ExerciseName, Source={RelativeSource AncestorType={x:Type self:ImageBox}}}"/>
+                
+                <!-- Open Media-Player -->
+                <Image Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1" HeightRequest="24" Source="play_button.svg"
+                   HorizontalOptions="End" VerticalOptions="Start" Margin="0,-14,10,0"/>
+
+                <!-- Exercise Training Time -->
+                <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Margin="15,5,0,15" HorizontalOptions="Start" VerticalOptions="End">
+                    <Image Source="time.svg" HorizontalOptions="Start" HeightRequest="12"/>
+                    <Label Text="{Binding TrainingTime, Source={RelativeSource AncestorType={x:Type self:ImageBox}}}" Margin="5,0" FontSize="12"/>
+                </HorizontalStackLayout>
+                
+                <!-- Exercise Burned Calories -->
+                <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Margin="0,5,15,15" HorizontalOptions="End" VerticalOptions="End">
+                    <Image Source="fire.svg" HorizontalOptions="Start" HeightRequest="14"/>
+                    <Label Text="{Binding BurnedCalories, Source={RelativeSource AncestorType={x:Type self:ImageBox}}}" Margin="5,0" FontSize="12"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Grid>
+    </Border>
+</ContentView>

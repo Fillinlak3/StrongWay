@@ -37,5 +37,17 @@ namespace StrongWay.Services
 
             Videos = JsonConvert.DeserializeObject<List<Video>>(json)!;
         }
+
+        /// <summary>
+        /// Get a list of Video objects filtered by difficulty and optionally by muscle group.
+        /// </summary>
+        /// <param name="difficulty">Required difficulty level</param>
+        /// <param name="muscleGroup">Optional muscle group (default: None = no filter)</param>
+        /// <returns>Filtered IEnumerable of Video objects</returns>
+        public IEnumerable<Video> GetBy(Video.Difficulty difficulty, Video.MuscleGroup muscleGroup = Video.MuscleGroup.None) =>
+            Videos.Where(v => v.Exercise_Difficulty == difficulty &&
+                             // If is none, skip the muscle group       Otherwise, also select based on muscle group
+                             (muscleGroup == Video.MuscleGroup.None || v.Muscle_Group == muscleGroup));
+
     }
 }

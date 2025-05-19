@@ -19,6 +19,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
+		<UseFastDeployment>false</UseFastDeployment>
+		<RunAOTCompilation>false</RunAOTCompilation>
+
 		<!-- Display name -->
 		<ApplicationTitle>Strong Way</ApplicationTitle>
 
@@ -56,9 +59,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.0.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.60" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.60" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.70" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.70" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
@@ -70,9 +73,20 @@
 	<!-- Videos, jsons, other file types -->
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Data\videos_metadata.json" />
-	  <MauiAsset Include="Resources\Videos\Beginner\Arms\dumbell_curl.mp4" />
-	  <MauiAsset Include="Resources\Videos\Beginner\Arms\onearm_seated_dumbellwristcurl.mp4" />
-	  <MauiAsset Include="Resources\Videos\Beginner\Arms\single_benchdip.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Arms\dumbbell_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Arms\onearm_seated_dumbbell_wrist_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Arms\single_bench_dip.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Chest\pec_deck.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Chest\push_up.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Chest\standing_cable_fly.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Legs\dumbbell_goblet_squat.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Legs\exercise_ball_leg_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Legs\seated_dumbbell_calf_raise.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Shoulders\dumbbell_lateral_raise.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Shoulders\seated_dumbbell_lateral_raise.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Back\90_on_90_hip_crossover.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Back\dumbbell_shrug.mp4" />
+	  <MauiAsset Include="Resources\Videos\Beginner\Back\seated_cable_row.mp4" />
 	</ItemGroup>
 
 	<!-- Images -->
@@ -85,6 +99,9 @@
 	  <MauiImage Include="Resources\Images\HomePage\svg\focused\community_focused.svg" />
 	  <MauiImage Include="Resources\Images\HomePage\svg\focused\nutrition_focused.svg" />
 	  <MauiImage Include="Resources\Images\HomePage\svg\nutrition.svg" />
+	  <MauiImage Include="Resources\Images\ImageBox\svg\fire.svg" />
+	  <MauiImage Include="Resources\Images\ImageBox\svg\play_button.svg" />
+	  <MauiImage Include="Resources\Images\ImageBox\svg\time.svg" />
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\customer_support.svg" />
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\home.svg" />
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\notifications_bell.svg" />
@@ -94,18 +111,38 @@
 	  <MauiImage Include="Resources\Images\PageLayoutTemplate\svg\video_file.svg" />
 	  <MauiImage Include="Resources\Images\SocialMediaIcons\svg\facebook.svg" />
 	  <MauiImage Include="Resources\Images\SocialMediaIcons\svg\google.svg" />
-	  <MauiImage Include="Resources\Videos\Beginner\Arms\thumbnail_dumbell_curl.png" />
-	  <MauiImage Include="Resources\Videos\Beginner\Arms\thumbnail_onearm_seated_dumbellwristcurl.png" />
-	  <MauiImage Include="Resources\Videos\Beginner\Arms\thumbnail_single_benchdip.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Arms\thumbnail_dumbbell_curl.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Arms\thumbnail_onearm_seated_dumbbell_wrist_curl.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Arms\thumbnail_single_bench_dip.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Chest\thumbnail_push_up.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Chest\thumbnail_pec_deck.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Chest\thumbnail_standing_cable_fly.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Legs\thumbnail_dumbbell_goblet_squat.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Legs\thumbnail_exercise_ball_leg_curl.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Legs\thumbnail_seated_dumbell_calf_raise.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Shoulders\thumbnail_dumbbell_lateral_raise.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Shoulders\thumbnail_seated_dumbbell_lateral_raise.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Back\thumbnail_90_on_90_hip_crossover.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Back\thumbnail_dumbbell_shrug.png" />
+	  <MauiImage Include="Resources\Videos\Beginner\Back\thumbnail_seated_cable_row.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Controls\ImageBox.xaml.cs">
+	    <DependentUpon>ImageBox.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Controls\RoundEntry.xaml.cs">
 	    <DependentUpon>RoundEntry.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Controls\DisplayBox.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\ImageBox.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Controls\RoundButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

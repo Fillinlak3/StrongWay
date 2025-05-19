@@ -73,16 +73,11 @@
         /// Instantiate a video object
         /// </summary>
         /// <param name="name">Video name</param>
-        /// <param name="thumbnail">Video thumbnail</param>
-        /// <param name="exerciseDifficulty">Video exercise difficulty</param>
         /// <param name="muscleGroup">Video exercise muscle group focused</param>
-        public Video(string source, string name, string thumbnail, Difficulty exerciseDifficulty, MuscleGroup muscleGroup)
-        {
-            Source = source;
-            Name = name;
-            Thumbnail = thumbnail;
-            Exercise_Difficulty = exerciseDifficulty;
-            Muscle_Group = muscleGroup;
-        }
+        /// <param name="exerciseDifficulty">Video exercise difficulty</param>
+        /// <param name="source">Video `mp4` source</param>
+        /// <param name="thumbnail">Video `png` thumbnail source</param>
+        public Video(string name, MuscleGroup muscleGroup, Difficulty exerciseDifficulty, string source, string thumbnail) =>
+            (Name, Muscle_Group, Exercise_Difficulty, Source, Thumbnail) = (name, muscleGroup, exerciseDifficulty, source, thumbnail);
     }
 }

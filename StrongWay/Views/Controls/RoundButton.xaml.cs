@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace StrongWay.Views.Controls;
 
 public partial class RoundButton : ContentView
@@ -5,8 +7,6 @@ public partial class RoundButton : ContentView
 	public RoundButton()
 	{
 		InitializeComponent();
-
-        BindingContext = this;
 	}
 
     // 1. Text
@@ -59,7 +59,7 @@ public partial class RoundButton : ContentView
         set => SetValue(TextFontAttributesProperty, value);
     }
 
-    // 2. TextColor
+    // 6. TextColor
     public static readonly BindableProperty TextForegroundColorProperty =
         BindableProperty.Create(nameof(TextForegroundColor), typeof(Color), typeof(RoundButton), Color.FromArgb("#FFFFFF"));
 
@@ -67,5 +67,15 @@ public partial class RoundButton : ContentView
     {
         get => (Color)GetValue(TextForegroundColorProperty);
         set => SetValue(TextForegroundColorProperty, value);
+    }
+
+    // 7. ButtonCommand
+    public static readonly BindableProperty CommandProperty =
+    BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(RoundButton));
+
+    public ICommand Command
+    {
+        get => (ICommand)GetValue(CommandProperty);
+        set => SetValue(CommandProperty, value);
     }
 }

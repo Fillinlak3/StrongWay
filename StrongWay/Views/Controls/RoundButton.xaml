@@ -4,9 +4,15 @@
              xmlns:self="clr-namespace:StrongWay.Views.Controls"
              x:Class="StrongWay.Views.Controls.RoundButton"
              x:DataType="self:RoundButton">
-    <Border Background="{Binding BorderBackground}" Padding="0,0"
-            StrokeThickness="0.5" StrokeShape="RoundRectangle 50" Stroke="{Binding StrokeColor}">
-        <Button Background="Transparent" FontAttributes="{Binding TextFontAttributes}"
-                FontSize="{Binding TextFontSize}" Text="{Binding Text}" TextColor="{Binding TextForegroundColor}"/>
+
+    <Border Background="{Binding BorderBackground, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}"
+            Padding="0,0" StrokeThickness="0.5" StrokeShape="RoundRectangle 50"
+            Stroke="{Binding StrokeColor, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}">
+        <Button Background="Transparent"
+                FontAttributes="{Binding TextFontAttributes, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}"
+                Command="{Binding Command, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}"
+                FontSize="{Binding TextFontSize, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}"
+                Text="{Binding Text, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}"
+                TextColor="{Binding TextForegroundColor, Source={RelativeSource AncestorType={x:Type self:RoundButton}}}"/>
     </Border>
 </ContentView>

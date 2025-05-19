@@ -13,6 +13,7 @@ namespace StrongWay.Views.Pages
         {
             InitializeComponent();
 
+            BindingContext = this;
             _videoPlayer = videoPlayer;
         }
 
@@ -25,6 +26,7 @@ namespace StrongWay.Views.Pages
             if(_videoPlayer.IsInitialized == false)
                 await _videoPlayer.InitAsync();
 
+            // Display the json video names for verification only
             foreach (var item in _videoPlayer.Videos)
                 Debug.WriteLine(item.Name);
 

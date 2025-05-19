@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:self="clr-namespace:StrongWay.Views.Controls"
+             xmlns:viewmodels="clr-namespace:StrongWay.ViewModels"
+             x:Class="StrongWay.Views.Controls.DisplayBox"
+             x:DataType="viewmodels:DisplayBoxViewModel">
+
+    <Border Background="#896cfe" HeightRequest="250" StrokeThickness="0.5" StrokeShape="RoundRectangle 30" Stroke="Transparent">
+        <Border.Resources>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="19" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Stroke" Value="#e2f163" />
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 30" />
+            </Style>
+        </Border.Resources>
+
+        <Grid RowSpacing="10" ColumnSpacing="10" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Padding="20,10,0,0" Text="{Binding MuscleGroup, Mode=OneWay}"/>
+            <Label Grid.Row="0" Grid.Column="1" Padding="0,10,20,0" HorizontalOptions="End" Text="See all"/>
+            
+            <!-- Video Thumbnail Display -->
+            <self:ImageBox Grid.Row="1" Grid.Column="0" x:Name="Exercise_1" VideoThumbnailSource="{Binding Video_1_ThumbnailSource}"
+                           ExerciseName="{Binding Video_1_ExerciseName}" TrainingTime="{Binding Video_1_TrainingTime}" BurnedCalories="{Binding Video_1_BurnedCalories}"/>
+            <self:ImageBox Grid.Row="1" Grid.Column="1" x:Name="Exercise_2" VideoThumbnailSource="{Binding Video_2_ThumbnailSource}"
+                           ExerciseName="{Binding Video_2_ExerciseName}" TrainingTime="{Binding Video_2_TrainingTime}" BurnedCalories="{Binding Video_2_BurnedCalories}"/>
+        </Grid>
+    </Border>
+</ContentView>

@@ -21,6 +21,7 @@ public static class MauiProgram
 
 #if DEBUG
 		builder.Logging.AddDebug();
+        builder.Logging.SetMinimumLevel(LogLevel.Error);
 #endif
         // Services
         builder.Services.AddSingleton<Services.INavigationService, Services.NavigationService>();
@@ -32,15 +33,15 @@ public static class MauiProgram
         // MainPage
         builder.Services.AddSingleton<Views.Pages.MainPage>();
         // LoginPage
-        builder.Services.AddSingleton<Views.Pages.LoginPage>();
-        builder.Services.AddSingleton<ViewModels.LoginPageViewModel>();
+        builder.Services.AddTransient<Views.Pages.LoginPage>();
+        builder.Services.AddTransient<ViewModels.LoginPageViewModel>();
         // RegisterPage
-        builder.Services.AddSingleton<Views.Pages.RegisterPage>();
-        builder.Services.AddSingleton<ViewModels.RegisterPageViewModel>();
+        builder.Services.AddTransient<Views.Pages.RegisterPage>();
+        builder.Services.AddTransient<ViewModels.RegisterPageViewModel>();
 
         // Panels
         // WorkoutPanel
-        builder.Services.AddSingleton<Views.Panels.WorkoutPanel>();
+        builder.Services.AddTransient<Views.Panels.WorkoutPanel>();
 
         return builder.Build();
 	}
