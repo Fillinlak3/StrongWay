@@ -1,3 +1,6 @@
+using Services.Logging;
+using System.Diagnostics;
+
 namespace StrongWay.Views.Controls;
 
 public partial class ImageBox : ContentView
@@ -45,5 +48,19 @@ public partial class ImageBox : ContentView
     {
         get => (string)GetValue(BurnedCaloriesProperty);
         set => SetValue(BurnedCaloriesProperty, value);
+    }
+
+    public Models.Video? Video_Exercise;
+    public event EventHandler<Models.Video>? VideoClickedEvent;
+    private void SendVideoToOverlay(object sender, TappedEventArgs e)
+    {
+        if (Video_Exercise is null)
+        {
+            Logger.LogFatal("ImageBox", "Cannot send an null video object to overlay.");
+            throw new ArgumentNullException($"Video object is null: {nameof(Video_Exercise)}");
+        }
+
+        Logger.LogInfo("ImageBox", $"Sent to video-overlay: {Video_Exercise.Name}");
+        VideoClickedEvent?.Invoke(this, Video_Exercise);
     }
 }

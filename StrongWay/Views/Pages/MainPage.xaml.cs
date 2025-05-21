@@ -30,6 +30,18 @@ namespace StrongWay.Views.Pages
 
             Logger.Log("MainPage", "Gathered videos, page initialized. Opening WorkoutPanel.");
             BodyContent.Content = new Panels.WorkoutPanel(_videoPlayer);
+
+            /* 
+                Bind the event for every ImageBox that is sending through DisplayBox and WorkoutPanel to MainPage.
+                Everytime when the user presses an ImageBox in the WorkoutPanel, the event will be caught here
+                And also here will open the OverlayView for the Video that is received from the ImageBox.
+                The video will be played in the overlay, and under it will have the video description and details.
+             */
+            (BodyContent.Content as Panels.WorkoutPanel)!.VideoClickedEvent += (s, video) =>
+            {
+                Logger.LogInfo("MainPage", $"Video to open: {video.Name}");
+                //OverlayView.IsVisible = true;
+            };
         }
 
         void UnfocusAllBodyButtons()

@@ -5,6 +5,8 @@ namespace StrongWay.Views.Panels;
 
 public partial class WorkoutPanel : ContentView
 {
+    public event EventHandler<Models.Video>? VideoClickedEvent;
+
     public WorkoutPanel(Services.VideoPlayer videoPlayer)
 	{
 		InitializeComponent();
@@ -24,13 +26,22 @@ public partial class WorkoutPanel : ContentView
             Load beginner, intermediate and advanced DisplayBoxes on the UI.
          */
         foreach (var item in viewModel.BeginnerBoxes)
+        {
+            item.VideoClickedEvent += (s, e) => VideoClickedEvent?.Invoke(this, e);
             BeginnerBoxes.Children.Add(item);
+        }
 
         foreach (var item in viewModel.IntermediateBoxes)
+        {
+            item.VideoClickedEvent += (s, e) => VideoClickedEvent?.Invoke(this, e);
             IntermediateBoxes.Children.Add(item);
+        }
 
         foreach (var item in viewModel.AdvancedBoxes)
+        {
+            item.VideoClickedEvent += (s, e) => VideoClickedEvent?.Invoke(this, e);
             AdvancedBoxes.Children.Add(item);
+        }
 
         if(BeginnerBoxes.Count > 0) Logger.Log("WorkoutPanel", "BeginnerBoxes loaded.");
         if(IntermediateBoxes.Count > 0) Logger.Log("WorkoutPanel", "IntermediateBoxes loaded.");
