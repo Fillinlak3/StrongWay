@@ -31,7 +31,11 @@
                         <Setter Property="TextColor" Value="#e2f163" />
                         <Setter Property="FontAttributes" Value="Bold" />
                         <Setter Property="FontSize" Value="14" />
-                        <Setter Property="Padding" Value="10,5,20,0" />
+                        <Setter Property="Padding" Value="10,5,0,0" />
+                        <Setter Property="HorizontalOptions" Value="Start" />
+                        <Setter Property="HorizontalTextAlignment" Value="Start" />
+                        <Setter Property="MaximumWidthRequest" Value="135" />
+                        <Setter Property="LineBreakMode" Value="WordWrap" />
                     </Style>
                 </Grid.Resources>
 

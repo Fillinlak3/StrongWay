@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using Services.Logging;
 
 namespace StrongWay.ViewModels
 {
@@ -84,9 +84,13 @@ namespace StrongWay.ViewModels
         private void InitializeDisplayBox()
         {
             if (VideoExercises == null || VideoExercises.Count == 0)
-                throw new ArgumentException("List must contain at least 1 element.", nameof(VideoExercises));
+            {
+                string message = $"List must contain at least 1 element. {nameof(VideoExercises)}";
+                Logger.LogFatal("DisplayBoxViewModel", message);
+                throw new ArgumentException(message);
+            }
 
-            MuscleGroup = VideoExercises[0].Muscle_Group.ToString();
+            MuscleGroup = VideoExercises[0].Muscle_Group.ToString().Replace("_", " - ");
         }
 
         public static (T First, T Second) GetTwoRandomDistinct<T>(List<T> list)
@@ -110,7 +114,11 @@ namespace StrongWay.ViewModels
         private void InitializeImageBoxes()
         {
             if (VideoExercises == null || VideoExercises.Count < 2)
-                throw new ArgumentException("List must contain at least 2 elements.", nameof(VideoExercises));
+            {
+                string message = $"List must contain at least 2 elements. {nameof(VideoExercises)}";
+                Logger.LogFatal("DisplayBoxViewModel", message);
+                throw new ArgumentException(message);
+            }
 
             //var (video1, video2) = GetTwoRandomDistinct(VideoExercises);
             var video1 = VideoExercises[0];

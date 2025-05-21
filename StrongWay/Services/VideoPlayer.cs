@@ -1,16 +1,25 @@
 ﻿using Newtonsoft.Json;
 using StrongWay.Models;
+using Difficulty = StrongWay.Models.Video.Difficulty;
 
 namespace StrongWay.Services
 {
     public class VideoPlayer
     {
-        public List<Video> Videos { get; private set; } = new();
+        public List<Video> Videos { get; init; }
 
         /// <summary>
         /// Returns true if there are videos loaded
         /// </summary>
         public bool IsInitialized => Videos.Count > 0;
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public VideoPlayer()
+        {
+            Videos = new List<Video>();
+        }
 
         /// <summary>
         /// Call this before anything else.
@@ -26,16 +35,38 @@ namespace StrongWay.Services
         /// <exception cref="Exception">If embedded json file not found</exception>
         public async Task LoadVideosAsync()
         {
+            foreach (Difficulty difficulty in Enum.GetValues(typeof(Difficulty)))
+            {
+                // Skip the none phase.
+                if (difficulty == Difficulty.None) continue;
+
+                string json = await GetEmbeddedJsonManifestBy(difficulty);
+
+                // If returns empty, skip it
+                if (string.IsNullOrWhiteSpace(json)) continue;
+                Videos.AddRange(JsonConvert.DeserializeObject<List<Video>>(json)!);
+            }
+        }
+
+        /// <summary>
+        /// Get embedded json file based on Difficulty in a string output.
+        /// </summary>
+        /// <param name="difficulty">Exercise Difficulty</param>
+        /// <returns>A json string</returns>
+        /// <exception cref="Exception">If embedded resource not found</exception>
+        private async Task<string> GetEmbeddedJsonManifestBy(Difficulty difficulty)
+        {
             var assembly = typeof(VideoPlayer).Assembly;
 
-            // Formatul este: NAMESPACE.FOLDER.FILENAME
-            using var stream = assembly.GetManifestResourceStream("StrongWay.Resources.Data.videos_metadata.json")
-                ?? throw new Exception("Embedded videos_metadata.json file not found.");
+            string file_prefix = difficulty.ToString().ToLower();
+            string filename = $"{file_prefix}_videos_metadata.json";
+            // Format is: NAMESPACE.FOLDER.FILENAME
+            using var stream = assembly.GetManifestResourceStream($"StrongWay.Resources.Data.{filename}")
+                ?? throw new Exception($"Embedded {filename} file not found.");
 
             using var reader = new StreamReader(stream);
             string json = await reader.ReadToEndAsync();
-
-            Videos = JsonConvert.DeserializeObject<List<Video>>(json)!;
+            return json;
         }
 
         /// <summary>

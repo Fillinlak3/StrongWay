@@ -1,5 +1,5 @@
+using Services.Logging;
 using StrongWay.ViewModels;
-using System.Diagnostics;
 
 namespace StrongWay.Views.Panels;
 
@@ -8,6 +8,7 @@ public partial class WorkoutPanel : ContentView
     public WorkoutPanel(Services.VideoPlayer videoPlayer)
 	{
 		InitializeComponent();
+        Logger.Log("WorkoutPanel", "Object created.");
 
         BindingContext = new WorkoutPanelViewModel(videoPlayer);
     }
@@ -22,7 +23,6 @@ public partial class WorkoutPanel : ContentView
         /*
             Load beginner, intermediate and advanced DisplayBoxes on the UI.
          */
-
         foreach (var item in viewModel.BeginnerBoxes)
             BeginnerBoxes.Children.Add(item);
 
@@ -31,6 +31,10 @@ public partial class WorkoutPanel : ContentView
 
         foreach (var item in viewModel.AdvancedBoxes)
             AdvancedBoxes.Children.Add(item);
+
+        if(BeginnerBoxes.Count > 0) Logger.Log("WorkoutPanel", "BeginnerBoxes loaded.");
+        if(IntermediateBoxes.Count > 0) Logger.Log("WorkoutPanel", "IntermediateBoxes loaded.");
+        if(AdvancedBoxes.Count > 0) Logger.Log("WorkoutPanel", "AdvancedBoxes loaded.");
     }
 
     /// <summary>

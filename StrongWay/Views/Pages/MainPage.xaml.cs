@@ -1,4 +1,5 @@
-﻿using StrongWay.Services;
+﻿using Services.Logging;
+using StrongWay.Services;
 using System.Diagnostics;
 
 namespace StrongWay.Views.Pages
@@ -12,6 +13,7 @@ namespace StrongWay.Views.Pages
         public MainPage(VideoPlayer videoPlayer)
         {
             InitializeComponent();
+            Logger.Log("MainPage", "Object created.");
 
             BindingContext = this;
             _videoPlayer = videoPlayer;
@@ -26,10 +28,7 @@ namespace StrongWay.Views.Pages
             if(_videoPlayer.IsInitialized == false)
                 await _videoPlayer.InitAsync();
 
-            // Display the json video names for verification only
-            foreach (var item in _videoPlayer.Videos)
-                Debug.WriteLine(item.Name);
-
+            Logger.Log("MainPage", "Gathered videos, page initialized. Opening WorkoutPanel.");
             BodyContent.Content = new Panels.WorkoutPanel(_videoPlayer);
         }
 
@@ -82,7 +81,7 @@ namespace StrongWay.Views.Pages
 
             string classID = tappedElement.ClassId;
             FocusBodyButtonByClassId(classID);
-            Debug.WriteLine(classID);
+            Logger.Log("MainPage", $"Focusing: {classID}.");
         }
     }
 }

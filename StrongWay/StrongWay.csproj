@@ -72,7 +72,9 @@
 
 	<!-- Videos, jsons, other file types -->
 	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Data\videos_metadata.json" />
+	  <EmbeddedResource Include="Resources\Data\beginner_videos_metadata.json" />
+	  <EmbeddedResource Include="Resources\Data\intermediate_videos_metadata.json" />
+	  <EmbeddedResource Include="Resources\Data\advanced_videos_metadata.json" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Arms\dumbbell_curl.mp4" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Arms\onearm_seated_dumbbell_wrist_curl.mp4" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Arms\single_bench_dip.mp4" />
@@ -84,9 +86,32 @@
 	  <MauiAsset Include="Resources\Videos\Beginner\Legs\seated_dumbbell_calf_raise.mp4" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Shoulders\dumbbell_lateral_raise.mp4" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Shoulders\seated_dumbbell_lateral_raise.mp4" />
-	  <MauiAsset Include="Resources\Videos\Beginner\Back\90_on_90_hip_crossover.mp4" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Back\dumbbell_shrug.mp4" />
 	  <MauiAsset Include="Resources\Videos\Beginner\Back\seated_cable_row.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Arms\Biceps\barbell_biceps_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Arms\Biceps\hammer_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Arms\Forearm\behind_the_back_barbell_wrist_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Arms\Forearm\seated_barbell_wrist_curl.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Arms\Triceps\banded_tricep_extension.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Arms\Triceps\rope_tricep_extension.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\Lats\lat_pull_down.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\Lats\straight_arm_lat_pull_down.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\LowerBack\superman.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\LowerBack\90_on_90_hip_crossover.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\Traps\barbell_upright_row.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\Traps\onearm_dumbbell_upright_row.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\UpperBack\bent_over_dumbbell_row.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Back\UpperBack\machine_tbar_row.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Chest\barbell_bench_press.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Chest\decline_bench_press.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Chest\incline_bench_press.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Legs\Calves\45_degree_leg_press_calf_raise.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Legs\Calves\seated_calf_raise.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Legs\Quads\leg_extension.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Legs\Quads\leg_press.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Shoulders\bent_over_low_pulley_rear_delt_fly.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Shoulders\military_press_aka_overhead_press.mp4" />
+	  <MauiAsset Include="Resources\Videos\Intermediate\Shoulders\standing_dumbbell_shoulder_press.mp4" />
 	</ItemGroup>
 
 	<!-- Images -->
@@ -122,9 +147,35 @@
 	  <MauiImage Include="Resources\Videos\Beginner\Legs\thumbnail_seated_dumbell_calf_raise.png" />
 	  <MauiImage Include="Resources\Videos\Beginner\Shoulders\thumbnail_dumbbell_lateral_raise.png" />
 	  <MauiImage Include="Resources\Videos\Beginner\Shoulders\thumbnail_seated_dumbbell_lateral_raise.png" />
-	  <MauiImage Include="Resources\Videos\Beginner\Back\thumbnail_90_on_90_hip_crossover.png" />
 	  <MauiImage Include="Resources\Videos\Beginner\Back\thumbnail_dumbbell_shrug.png" />
 	  <MauiImage Include="Resources\Videos\Beginner\Back\thumbnail_seated_cable_row.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Arms\Biceps\thumbnail_barbell_biceps_curl.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Arms\Biceps\thumbnail_hammer_curl.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Arms\Forearm\thumbnail_behind_the_back_barbell_wrist_curl.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Arms\Forearm\thumbnail_seated_barbell_wrist_curl.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Arms\Triceps\thumbnail_banded_tricep_extension.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Arms\Triceps\thumbnail_rope_tricep_extension.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\Lats\thumbnail_lat_pull_down.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\Lats\thumbnail_straight_arm_lat_pull_down.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\LowerBack\thumbnail_superman.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\LowerBack\thumbnail_90_on_90_hip_crossover.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\Traps\thumbnail_barbell_upright_row.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\Traps\thumbnail_onearm_dumbbell_upright_row.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\UpperBack\thumbnail_bent_over_dumbbell_row.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Back\UpperBack\thumbnail_machine_tbar_row.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Chest\thumbnail_decline_bench_press.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Chest\thumbnail_incline_bench_press.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Chest\thumbnail_barbell_bench_press.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Legs\Calves\thumbnail_45_degree_leg_press_calf_raise.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Legs\Calves\thumbnail_seated_calf_raise.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Legs\Quads\thumbnail_leg_extension.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Legs\Quads\thumbnail_leg_press.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Shoulders\thumbnail_bent_over_low_pulley_rear_delt_fly.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Shoulders\thumbnail_military_press_aka_overhead_press.png" />
+	  <MauiImage Include="Resources\Videos\Intermediate\Shoulders\thumbnail_standing_dumbbell_shoulder_press.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Logger\Logger.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -156,6 +207,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Panels\VideoPopupOverlay.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Panels\WorkoutPanel.xaml">

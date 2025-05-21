@@ -54,11 +54,11 @@ namespace StrongWay.ViewModels
             set { advancedBoxesVisibility = value; OnPropertyChanged(); }
         }
 
-        public List<DisplayBox> BeginnerBoxes;
+        public List<DisplayBox> BeginnerBoxes { get; private set; }
 
-        public List<DisplayBox> IntermediateBoxes;
+        public List<DisplayBox> IntermediateBoxes { get; private set; }
 
-        public List<DisplayBox> AdvancedBoxes;
+        public List<DisplayBox> AdvancedBoxes { get; private set; }
 
         public RelayCommand BeginnerBTN_PressedCommand { get; init; }
         public RelayCommand IntermediateBTN_PressedCommand { get; init; }

@@ -1,4 +1,5 @@
-﻿using StrongWay.Services;
+﻿using Services.Logging;
+using StrongWay.Services;
 
 namespace StrongWay.ViewModels
 {
@@ -9,6 +10,7 @@ namespace StrongWay.ViewModels
 
         public RegisterPageViewModel(INavigationService navigationService)
         {
+            Logger.Log("RegisterPageViewModel", "Object created.");
             _navigationService = navigationService;
 
             NavigateToLoginPageCommand = new RelayCommand(NavigateToLoginPage);

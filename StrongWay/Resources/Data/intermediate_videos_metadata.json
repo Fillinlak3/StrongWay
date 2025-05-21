@@ -1,0 +1,180 @@
+[
+  {
+    "name": "Barbell Biceps Curl",
+    "muscleGroup": "Arms_Biceps",
+    "exerciseDifficulty": "Intermediate",
+    "source": "barbell_biceps_curl.mp4",
+    "thumbnail": "thumbnail_barbell_biceps_curl.png"
+  },
+  {
+    "name": "Hammer Curl",
+    "muscleGroup": "Arms_Biceps",
+    "exerciseDifficulty": "Intermediate",
+    "source": "hammer_curl.mp4",
+    "thumbnail": "thumbnail_hammer_curl.png"
+  },
+  {
+    "name": "Behind the Back Barbell Wrist Curl",
+    "muscleGroup": "Arms_Forearm",
+    "exerciseDifficulty": "Intermediate",
+    "source": "behind_the_back_barbell_wrist_curl.mp4",
+    "thumbnail": "thumbnail_behind_the_back_barbell_wrist_curl.png"
+  },
+  {
+    "name": "Seated Barbell Wrist Curl",
+    "muscleGroup": "Arms_Forearm",
+    "exerciseDifficulty": "Intermediate",
+    "source": "seated_barbell_wrist_curl.mp4",
+    "thumbnail": "thumbnail_seated_barbell_wrist_curl.png"
+  },
+  {
+    "name": "Banded Tricep Extension",
+    "muscleGroup": "Arms_Triceps",
+    "exerciseDifficulty": "Intermediate",
+    "source": "banded_tricep_extension.mp4",
+    "thumbnail": "thumbnail_banded_tricep_extension.png"
+  },
+  {
+    "name": "Rope Tricep Extension",
+    "muscleGroup": "Arms_Triceps",
+    "exerciseDifficulty": "Intermediate",
+    "source": "rope_tricep_extension.mp4",
+    "thumbnail": "thumbnail_rope_tricep_extension.png"
+  },
+
+
+  {
+    "name": "Lat Pull Down",
+    "muscleGroup": "Back_Lats",
+    "exerciseDifficulty": "Intermediate",
+    "source": "lat_pull_down.mp4",
+    "thumbnail": "thumbnail_lat_pull_down.png"
+  },
+  {
+    "name": "Straight Arm Lat Pull Down",
+    "muscleGroup": "Back_Lats",
+    "exerciseDifficulty": "Intermediate",
+    "source": "straight_arm_lat_pull_down.mp4",
+    "thumbnail": "thumbnail_straight_arm_lat_pull_down.png"
+  },
+  {
+    "name": "Superman",
+    "muscleGroup": "Back_LowerBack",
+    "exerciseDifficulty": "Intermediate",
+    "source": "superman.mp4",
+    "thumbnail": "thumbnail_superman.png"
+  },
+  {
+    "name": "90 on 90 Hip Crossover",
+    "muscleGroup": "Back_LowerBack",
+    "exerciseDifficulty": "Intermediate",
+    "source": "90_on_90_hip_crossover.mp4",
+    "thumbnail": "thumbnail_90_on_90_hip_crossover.png"
+  },
+  {
+    "name": "Bent Over Dumbbell Row",
+    "muscleGroup": "Back_UpperBack",
+    "exerciseDifficulty": "Intermediate",
+    "source": "bent_over_dumbbell_row.mp4",
+    "thumbnail": "thumbnail_bent_over_dumbbell_row.png"
+  },
+  {
+    "name": "Machine T-Bar Row",
+    "muscleGroup": "Back_UpperBack",
+    "exerciseDifficulty": "Intermediate",
+    "source": "machine_tbar_row.mp4",
+    "thumbnail": "thumbnail_machine_tbar_row.png"
+  },
+  {
+    "name": "Barbell Upright Row",
+    "muscleGroup": "Back_Traps",
+    "exerciseDifficulty": "Intermediate",
+    "source": "barbell_upright_row.mp4",
+    "thumbnail": "thumbnail_barbell_upright_row.png"
+  },
+  {
+    "name": "One-Arm Dumbbell Upright Row",
+    "muscleGroup": "Back_Traps",
+    "exerciseDifficulty": "Intermediate",
+    "source": "onearm_dumbbell_upright_row.mp4",
+    "thumbnail": "thumbnail_onearm_dumbbell_upright_row.png"
+  },
+
+
+  {
+    "name": "Barbell Bench Press",
+    "muscleGroup": "Chest",
+    "exerciseDifficulty": "Intermediate",
+    "source": "barbell_bench_press.mp4",
+    "thumbnail": "thumbnail_barbell_bench_press.png"
+  },
+  {
+    "name": "Decline Bench Press",
+    "muscleGroup": "Chest",
+    "exerciseDifficulty": "Intermediate",
+    "source": "decline_bench_press.mp4",
+    "thumbnail": "thumbnail_decline_bench_press.png"
+  },
+  {
+    "name": "Incline Bench Press",
+    "muscleGroup": "Chest",
+    "exerciseDifficulty": "Intermediate",
+    "source": "incline_bench_press.mp4",
+    "thumbnail": "thumbnail_incline_bench_press.png"
+  },
+
+
+  {
+    "name": "45 Degree Leg Press Calf Raise",
+    "muscleGroup": "Legs_Calves",
+    "exerciseDifficulty": "Intermediate",
+    "source": "45_degree_leg_press_calf_raise.mp4",
+    "thumbnail": "thumbnail_45_degree_leg_press_calf_raise.png"
+  },
+  {
+    "name": "Seated Calf Raise",
+    "muscleGroup": "Legs_Calves",
+    "exerciseDifficulty": "Intermediate",
+    "source": "seated_calf_raise.mp4",
+    "thumbnail": "thumbnail_seated_calf_raise.png"
+  },
+
+
+  {
+    "name": "Leg Extension",
+    "muscleGroup": "Legs_Quads",
+    "exerciseDifficulty": "Intermediate",
+    "source": "leg_extension.mp4",
+    "thumbnail": "thumbnail_leg_extension.png"
+  },
+  {
+    "name": "Leg Press",
+    "muscleGroup": "Legs_Quads",
+    "exerciseDifficulty": "Intermediate",
+    "source": "leg_press.mp4",
+    "thumbnail": "thumbnail_leg_press.png"
+  },
+
+
+  {
+    "name": "Bent Over Low Pulley Rear Delt Fly",
+    "muscleGroup": "Shoulders",
+    "exerciseDifficulty": "Intermediate",
+    "source": "bent_over_low_pulley_rear_delt_fly.mp4",
+    "thumbnail": "thumbnail_bent_over_low_pulley_rear_delt_fly.png"
+  },
+  {
+    "name": "Military Press (aka Overhead Press)",
+    "muscleGroup": "Shoulders",
+    "exerciseDifficulty": "Intermediate",
+    "source": "military_press_aka_overhead_press.mp4",
+    "thumbnail": "thumbnail_military_press_aka_overhead_press.png"
+  },
+  {
+    "name": "Standing Dumbbell Shoulder Press",
+    "muscleGroup": "Shoulders",
+    "exerciseDifficulty": "Intermediate",
+    "source": "standing_dumbbell_shoulder_press.mp4",
+    "thumbnail": "thumbnail_standing_dumbbell_shoulder_press.png"
+  }
+]
